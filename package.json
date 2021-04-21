@@ -1,0 +1,24 @@
+{
+  "name": "module-11-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "heroku": "^7.52.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertmcshinsky/Module-11-Challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertmcshinsky/Module-11-Challenge/issues"
+  },
+  "homepage": "https://github.com/robertmcshinsky/Module-11-Challenge#readme"
+}
