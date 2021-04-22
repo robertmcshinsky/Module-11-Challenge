@@ -4,6 +4,11 @@
       "title": "Test",
       "text": "Test Text",
       "id": "0"
+    },
+    {
+      "title": "New Note Title Here 👈",
+      "text": "New Text Here 👈 \nAnd don't forget to save your note! Press the Top Right Save button to save your work!        👆",
+      "id": "1"
     }
   ]
 }
