@@ -4,6 +4,11 @@ const express = require("express");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
+
+const path = require("path");
+
+app.use(express.static(path.join(__dirname, "public")));
 
 ///////
 const port = process.env.PORT || 3000;
@@ -11,7 +16,6 @@ const port = process.env.PORT || 3000;
 const { notes } = require("./data/db.json");
 
 const fs = require("fs");
-const path = require("path");
 ////////////////////////////////
 
 function filterByQuery(query, notesArray) {
@@ -40,12 +44,16 @@ function createNewNote(body, notesArray) {
 
   return note;
 }
+
+function deleteNote(id, notesArray) {
+  console.log("@deleteNote");
+}
 ////////////////////////////////
 
 //! GET HOME ROUTE
 app.get("/", function (req, res) {
   console.log("@getHomeRoute");
-  res.send("@ / get route");
+  res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
 //! GET API NOTES ROUTE
@@ -67,6 +75,15 @@ app.post("/api/notes", function (req, res) {
 
   console.log(req.body);
   res.json(req.body);
+});
+
+app.delete("/api/notes", function (req, res) {
+  let results = notes;
+  console.log(req.query.id);
+});
+
+app.get("/notes", function (req, res) {
+  res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
 ////////////////////////////////
