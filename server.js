@@ -53,7 +53,7 @@ function deleteNote(id, notesArray) {
 //! GET HOME ROUTE
 app.get("/", function (req, res) {
   console.log("@getHomeRoute");
-  res.sendFile(path.join(__dirname, "/public/index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 //! GET API NOTES ROUTE
