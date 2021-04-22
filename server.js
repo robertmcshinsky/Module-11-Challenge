@@ -2,9 +2,14 @@ console.log("@server.js");
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 ///////
+const port = process.env.PORT || 3000;
+
 const { notes } = require("./data/db.json");
+
 const fs = require("fs");
 ////////////////////////////////
 
@@ -22,12 +27,12 @@ function filterByQuery(query, notesArray) {
 
 ////////////////////////////////
 
-//!GET HOME ROUTE
+//! GET HOME ROUTE
 app.get("/", function (req, res) {
   res.send("@ / get route");
 });
 
-//!GET API NOTES ROUTE
+//! GET API NOTES ROUTE
 app.get("/api/notes", function (req, res) {
   let results = notes;
   if (req.query) {
@@ -36,8 +41,11 @@ app.get("/api/notes", function (req, res) {
   res.json(results);
 });
 
-//!POST API NOTES ROUTE
-app.post("/api/notes", function (req, res) {});
+//! POST API NOTES ROUTE
+app.post("/api/notes", function (req, res) {
+  console.log(req.body);
+  res.json(req.body);
+});
 
 ////////////////////////////////
 
