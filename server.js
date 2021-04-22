@@ -18,11 +18,11 @@ function filterByQuery(query, notesArray) {
   console.log("@filterByQuery");
   let filtered = notesArray;
 
-  if (query.id) {
-    filtered = filtered.filter((notes) => notes.id === query.id);
+  if (query.title) {
+    filtered = filtered.filter((notes) => notes.title === query.title);
   }
-  if (query.name) {
-    filtered = filtered.filter((notes) => notes.name === query.name);
+  if (query.text) {
+    filtered = filtered.filter((notes) => notes.text === query.text);
   }
   return filtered;
 }

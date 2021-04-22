@@ -1,9 +1,3 @@
 {
-"notes": [
-{
-"id": "0",
-"name": "test",
-"data": "lorem ipsum dolor sit amet"
-}
-]
+"notes": [{"title":"Test Title","text":"Test text"}]
 }
