@@ -77,6 +77,7 @@ app.post("/api/notes", function (req, res) {
   res.json(req.body);
 });
 
+//! DELETE API NOTES ROUTE
 app.delete("/api/notes", function (req, res) {
   let results = notes;
   console.log(req.query.id);
